@@ -2,7 +2,7 @@ class Player{
     name;
     ranking;
 
-    constructor(name, ranking){
+    constructor(name, ranking=0){
         this.name = name;
         this.ranking = ranking;
 
