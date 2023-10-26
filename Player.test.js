@@ -38,3 +38,43 @@ test('Crear jugador femenino por poner un genero aleatorio', () => {
     expect(jugador1.gender).toBe('female');
 
 });
+test('Crear jugador con fecha nacimiento',  () =>{
+    const jugador1 = new Player('ana',2,'female','13/04/1999');
+    expect(jugador1.birthday).toBe('13/04/1999');
+   
+
+});
+test('Crear jugador con fecha nacimiento no valida',  () =>{
+    const jugador1 = new Player('ana',2,'female','dfgd');
+    expect(jugador1.birthday).not.toBe('dfgd');
+    expect(jugador1.birthday).toBeUndefined();
+    expect(jugador1.age).toBeUndefined();
+   
+
+});
+test('Edad actual del jugador' , () =>{
+    const jugador1 = new Player('ana',2,'female','28/12/2000');
+    expect(jugador1.age).toBe(22);
+   
+});
+
+test('Categoria benjamin' , () =>{
+    const jugador1 = new Player('pepe',1,'male','12/12/2016');
+    expect(jugador1.category).toBe('Benjamin');
+   
+});
+test('Categoria cadete' , () =>{
+    const jugador1 = new Player('pepe',1,'male','1/1/2010');
+    expect(jugador1.category).toBe('Cadete');
+   
+});
+test('Categoria junior' , () =>{
+    const jugador1 = new Player('pepe',1,'male','1/1/2004');
+    expect(jugador1.category).toBe('Junior');
+   
+});
+test('Categoria senior' , () =>{
+    const jugador1 = new Player('pepe',1,'male','12/12/2000');
+    expect(jugador1.category).toBe('Senior');
+   
+});
